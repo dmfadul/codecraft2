@@ -11,3 +11,6 @@ def about(request):
 
 def contact(request):
     return render(request, 'mainSite/contact.html')
+
+def plans(request):
+    return render(request, 'mainSite/plans.html')
