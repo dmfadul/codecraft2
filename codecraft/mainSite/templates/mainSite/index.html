@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_link %}
+<link rel="preload" href="{% static 'css/index.css' %}" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+{% endblock %}
+
+{% block noscript_link %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section aria-label="Seção" class="section-div">
+    <div class="div-texto">    
+        <h2 class="digitando">Precisando de um sistema ou automação/bot?</h2>
+        <h2>🔍 Encontre a solução perfeita para o seu negócio!</h2>
+        <ul>
+            <li><i class="fa-solid fa-check"></i><strong>Automação de tarefas repetitivas:</strong> Deixe as tarefas repetitivas para os bots e concentre-se no que realmente importa para o crescimento do seu negócio.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Integração perfeita:</strong> Nossos sistemas se integram perfeitamente com suas ferramentas e plataformas existentes, garantindo uma transição suave e sem complicações.</li>
+            <li><i class="fa-solid fa-check"></i><strong>Aumento de produtividade:</strong> Com um bot cuidando das operações rotineiras, sua equipe pode focar em tarefas estratégicas e criativas.</li>
+            <li><i class="fa-solid fa-check"></i><strong>Suporte contínuo:</strong> Oferecemos suporte e manutenção constantes para garantir que tudo funcione perfeitamente, 24 horas por dia, 7 dias por semana.</li>
+        </ul>
+        <p>Não perca tempo com processos manuais e ineficientes. Entre em contato conosco hoje mesmo e descubra como nossas soluções de automação podem transformar o seu negócio!</p>
+    </div>
+    <form class="formulario_de_cadastro" id="contactForm" action="{% url 'index' %}" method="POST">
+        {% csrf_token %}
+        <div class="campo">
+            <label for="nome">Nome <span class="estrela">*</span></label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            <span class="error" id="nomeError"></span>
+        </div>
+        <div class="campo">
+            <label for="telefone">Telefone <span class="estrela">*</span></label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required>
+            <span class="error" id="telefoneError"></span>
+        </div>
+        <div class="campo">
+            <label for="email">E-mail <span class="estrela">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+            <span class="error" id="emailError"></span>
+        </div>
+        <div class="campo">
+            <label for="pedido">Como podemos te ajudar? <span class="estrela">*</span></label>
+            <textarea id="pedido" name="pedido" placeholder="Descreva seu pedido aqui" required></textarea>
+            <span class="descricao_pedido">Descreva exatamente o que está buscando. Quanto mais detalhes, mais rápido conseguimos te dar um retorno. Descrições vagas demais irão atrasar muito o processo de te entregar uma solução.</span>
+        </div>
+        <div class="campo">
+            <label for="descricao">Descrevi exatamente o que preciso acima? <span class="estrela">*</span></label>
+            <div class="opcoes">
+                <div class="opcao">
+                    <input type="radio" id="sim" name="descricao" value="Sim" required>
+                    <label for="sim">Sim</label>
+                </div>
+                <div class="opcao">
+                    <input type="radio" id="nao" name="descricao" value="Não" required>
+                    <label for="nao">Não</label>
+                </div>
+            </div>
+        </div>
+        <div class="campo1">
+            <button type="submit">Pedir Orçamento</button>
+        </div>
+    </form>
+</section>
+
+<section class="services">
+    <div class="sobre_titulo">
+        <h1>Nosso trabalho</h1>
+        <p>Conhecimentos</p>
+    </div>
+    <div class="my_services">
+        <ul>
+            <li><i class="fa-brands fa-html5"></i><h2>HTML</h2><p>Criação de páginas web estruturadas.</p></li>
+            <li><i class="fa-brands fa-css3"></i><h2>CSS3</h2><p>Controle do design e layout.</p></li>
+            <li><i class="fa-solid fa-globe"></i><h2>Redes de Computadores</h2><p>Interconexão de dispositivos.</p></li>
+            <li><i class="fa-solid fa-arrows-split-up-and-left"></i><h2>Scrum</h2><p>Metodologia ágil.</p></li>
+            <li><i class="fa-brands fa-github"></i><h2>Git e Github</h2><p>Controle de versões.</p></li>
+            <li><i class="fa-solid fa-magnifying-glass-chart"></i><h2>Business Intelligence</h2><p>Análise de dados.</p></li>
+            <li><i class="fa-solid fa-coins"></i><h2>SQL com MySQL</h2><p>Gerenciamento de bancos de dados.</p></li>
+            <li><i class="fa-brands fa-python"></i><h2>Python</h2><p>Linguagem versátil para automação.</p></li>
+        </ul>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="sobre_titulo1">
+        <h1>CodeCraft</h1>
+    </div>
+    <nav>
+        <ul class="footer_sociais">
+            <li><a href="https://wa.me/5541985030786" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="https://github.com/Codecraft15" target="_blank"><i class="fa-brands fa-github-alt"></i></a></li>
+            <li><a href="https://www.instagram.com/codecraftbrazil/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="mailto:codecraftcontato1@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
+        </ul>
+    </nav>
+    <p class="footer_comercial">Todos os direitos reservados &copy; 2024</p>
+</footer>
+{% endblock %}

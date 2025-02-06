@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZP81VY1TJ"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6ZP81VY1TJ');
+    </script>
+
+    <style>
+        html {
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
+
+    <link rel="preload" href="{% static 'css/reset.css' %}" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+    {% block css_link %}
+    {% endblock %}
+    <link rel="preload" href="{% static 'css/responsivo.css' %}" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+        {% block noscript_link %}
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/responsivo.css' %}">
+    </noscript>
+
+    <link rel="shortcut icon" href="{% static 'img/coroa.png' %}" type="image/x-icon">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </noscript>
+    {% block head_links %}
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <h1>Code<span>Craft</span></h1>
+        <nav>
+            <ul aria-label="Navegação primária" class="navegacao-primaria">
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'about' %}">Sobre Nós</a></li>
+                <li><a href="{% url 'contact' %}">Contatos</a></li>
+            </ul>
+            <i class="fa-solid fa-bars"></i>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7-beta.19/jquery.inputmask.min.js" defer></script>
+    <script src="{% static 'js/validacao.js' %}" defer></script>
+    <script src="{% static 'js/script.js' %}" type="application/javascript" defer></script>
+</body>
+
+</html>
