@@ -14,3 +14,7 @@ def contact(request):
 
 def plans(request):
     return render(request, 'mainSite/plans.html')
+
+def submit(request):
+    print("TESTE DE SUBMISSÃO")
+    return render(request, 'mainSite/about.html')

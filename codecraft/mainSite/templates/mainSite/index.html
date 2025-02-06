@@ -22,7 +22,7 @@
         </ul>
         <p>Não perca tempo com processos manuais e ineficientes. Entre em contato conosco hoje mesmo e descubra como nossas soluções de automação podem transformar o seu negócio!</p>
     </div>
-    <form class="formulario_de_cadastro" id="contactForm" action="{% url 'index' %}" method="POST">
+    <form class="formulario_de_cadastro" id="contactForm" action="{% url 'submit' %}" method="POST">
         {% csrf_token %}
         <div class="campo">
             <label for="nome">Nome <span class="estrela">*</span></label>
