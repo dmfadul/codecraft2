@@ -10,3 +10,8 @@ class Message(models.Model):
     user_message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     is_replied = models.BooleanField(default=False)
+
+
+
+    def __str__(self):
+        return f"{self.user_name} - {self.created_at}"
