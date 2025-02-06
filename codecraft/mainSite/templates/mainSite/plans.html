@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_link %}
+<link rel="preload" href="{% static 'css/planos.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{% endblock %}
+
+{% block noscript %}
+<link rel="stylesheet" href="{% static 'css/planos.css' %}">
+{% endblock %}
+
+{% block content %}
+<section aria-label="Seção" class="section-div">
+    <div class="text-plan">
+        <span>Escolha o melhor plano para você</span>
+    </div>
+    <form class="form-plan" action="">
+        <div class="selection-plan">
+            <div class="selection-plan-simples">
+                <div class="plan">
+                    <label class="plan-lab1">
+                        <h1 class="name-plan">Não quero me comprometer</h1>
+                        <div class="fa-check">
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+                    </label>
+                    <div class="discribe">
+                       <ul class="discribe-ul">
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Preço/mês</div>
+                                    <div class="plan-price">R$ 499,99</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Criação de site</div>
+                                    <div class="included-plan">1 página</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Integração com redes sociais</div>
+                                    <div class="included-plan">Instagram, TikTok, etc...</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">SEO</div>
+                                    <div class="included-plan">Integração básica de SEO</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Design responsivo</div>
+                                    <div class="included-plan">Celular, tablet, laptop, desktop</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Prazo de entrega</div>
+                                    <div class="included-plan">3-6 semanas</div>
+                                </div>
+                            </li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="selection-plan-simples">
+                <div class="plan">
+                    <label class="plan-lab2">
+                        <h1 class="name-plan">Purão</h1>
+                        <div class="fa-check">
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+                    </label>
+                    <div class="discribe">
+                       <ul class="discribe-ul">
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Preço/mês</div>
+                                    <div class="plan-price">R$ 999,99</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Criação de site</div>
+                                    <div class="included-plan">Até 3 páginas</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">SEO avançado</div>
+                                    <div class="included-plan">Otimização geral e essencial do site</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Integração com Google Analytics</div>
+                                    <div class="included-plan">Monitore e analise seu desempenho</div>
+                                </div>
+                            </li>
+                            <li class="discribe-li">
+                                <div class="discribe-0002">
+                                    <div class="discribe-product">Prazo de entrega</div>
+                                    <div class="included-plan">6-8 semanas</div>
+                                </div>
+                            </li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}

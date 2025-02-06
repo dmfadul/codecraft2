@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_link %}
+<link rel="preload" href="{% static 'css/contato.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{% endblock %}
+
+{% block noscript %}
+<link rel="stylesheet" href="{% static 'css/contato.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section aria-label="Seção" class="section-div">
+        <h1>Siga-nos nas Redes Sociais!</h1>
+        <p class="paragrafo1">Não perca nenhuma novidade! Siga-nos nas redes sociais e acompanhe de perto nosso trabalho, dicas e atualizações.</p>
+        <nav class="contado_sociais">
+            <ul>
+                <li><a href="https://wa.me/5541985030786" class="whatsapp-button" target="_blank" aria-label="Entre em contato pelo WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="https://github.com/Codecraft15" target="_blank"><i class="fa-brands fa-github-alt"></i></a></li>
+                <li><a href="https://www.instagram.com/codecraftbrazil/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="mailto:codecraftcontato1@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
+            </ul>
+        </nav>  
+        
+        <div class="redes_sociais">
+            <p>WhatsApp</p>
+            <p>GitHub</p>
+            <p>Instagram</p>
+            <p>E-mail</p>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="sobre_titulo1">
+        <h1>CodeCraft</h1>
+    </div>
+    <p class="footer_comercial">Todos os direitos reservados &copy; 2024</p>
+</footer>
+{% endblock %}

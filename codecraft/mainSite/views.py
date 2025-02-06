@@ -7,8 +7,7 @@ def index(request):
     return render(request, 'mainSite/index.html')
 
 def about(request):
-    return render(request, 'mainSite/index.html')
-
+    return render(request, 'mainSite/about.html')
 
 def contact(request):
-    return HttpResponse("Contact me")
+    return render(request, 'mainSite/contact.html')
