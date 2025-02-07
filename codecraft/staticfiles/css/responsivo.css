@@ -1,0 +1,854 @@
+/* * Laptops (até 1024px) */ 
+
+@media (max-width: 1024px) {
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao 0.8s ease-in-out forwards;
+    }
+
+
+    header h1{
+        font-size: 3em;
+    }
+
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+
+    header i {
+        color: #f7f7f7;
+        font-size: 2.5rem;
+    }
+
+
+    .my_services ul li {
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 300px;
+        min-width: 300px;
+
+    }
+
+
+    .section-div {
+        display: flex;
+        flex-direction: column;
+        margin: 50px;
+        padding: 20px; 
+    }
+    
+
+    .section-div > div {
+        order: 1;
+        padding-bottom: 30px;
+    }
+    
+
+    .formulario_de_cadastro {
+        order: 2;
+    }
+    
+
+    .section-div > div,
+    .formulario_de_cadastro {
+        width: 100%;
+    }
+    
+
+    .formulario_de_cadastro .campo {
+        width: auto;
+    }
+    
+
+    .formulario_de_cadastro .campo1 {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .sobre_conteudo {
+        grid-column: 1/-1;
+    }
+
+
+    .formulario_de_cadastro input[type="text"],
+    .formulario_de_cadastro input[type="tel"],
+    .formulario_de_cadastro input[type="email"],
+    .formulario_de_cadastro textarea {
+        width: 100%; 
+        max-width: 800px; 
+    }
+
+
+    .paragrafo3{
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .projects_armazenamento ul{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        flex-wrap: wrap;
+        align-content: space-around;
+    } 
+
+
+    .projects_armazenamento ul li img {
+        cursor: pointer;
+        max-width: 290px;
+        max-height: 200px;
+        min-width: 200px;
+        min-height: 200px;
+        border-radius: 4px;
+    }
+    
+
+
+
+    .footer_comercial{
+        font-size: 1.1rem;
+
+    }
+
+
+}
+
+
+/* Tablets (até 768px) */
+
+
+@media (max-width: 768px) {
+
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao 0.8s ease-in-out forwards;
+    }
+
+
+    header h1{
+        font-size: 3em;
+    }
+
+
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
+
+    header .navegacao-primaria {
+        display: none;
+    }
+
+
+    header i {
+        color: #f7f7f7;
+        font-size: 2.5rem;
+    }
+
+
+    .formulario_de_cadastro input[type="text"],
+    .formulario_de_cadastro input[type="tel"],
+    .formulario_de_cadastro input[type="email"],
+    .formulario_de_cadastro textarea {
+        width: 100%;
+        max-width: 400px; 
+    } 
+
+
+    .secao-sobre-nos{
+        padding: 10px;
+    }
+
+
+    .paragrafo3{
+        position: relative;
+        padding-bottom: 60px;
+    }
+
+
+    .my_services{
+        padding: 0;
+    }
+
+
+    .my_services ul li {
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+
+    .section-div {
+        display: flex;
+        flex-direction: column;
+        padding: 20px; 
+    }
+    
+
+    .section-div > div {
+        order: 1;
+        padding-bottom: 30px;
+    }
+    
+
+    .formulario_de_cadastro {
+        order: 2;
+    }
+    
+
+    .section-div > div,
+    .formulario_de_cadastro {
+        width: 100%;
+    }
+    
+
+    .formulario_de_cadastro .campo {
+        width: auto;
+    }
+  
+
+    .formulario_de_cadastro .campo1 {
+        display: flex;
+        justify-content: center; 
+    }
+
+
+    .sobre_conteudo {
+        grid-column: 1/-1;
+    }
+
+
+    .projects_armazenamento ul{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: space-around;
+    } 
+
+
+    .projects_armazenamento ul li img {
+        cursor: pointer;
+        max-width: 290px;
+        max-height: 200px;
+        min-width: 200px;
+        min-height: 200px;
+        border-radius: 4px;
+    }
+    
+
+
+    .footer_comercial{
+        font-size: 1.1rem;
+    }
+
+    
+}
+
+
+/* Celulares Grandes (até 590px) */
+
+
+@media (max-width: 590px) {
+
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 2px;
+        animation: sobeSecao 0.8s ease-in-out forwards;
+    }
+
+
+    header h1{
+        font-size: 2.5em;
+    }
+    
+    .section-div {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px; 
+    }
+    
+
+    .section-div > div {
+        order: 1;
+        padding-bottom: 50px;
+    }
+    
+
+    .formulario_de_cadastro {
+        order: 2;
+    }
+    
+
+    .section-div > div,
+    .formulario_de_cadastro {
+        width: 100%;
+    }
+    
+
+    .formulario_de_cadastro .campo {
+        width: auto;
+    }
+    
+
+    .formulario_de_cadastro .campo1 {
+        display: flex;
+        justify-content: center;
+    }
+   
+
+    .services{
+        margin-top: 80px;
+    }
+    
+
+    .my_services ul li {
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+
+    .formulario_de_cadastro input[type="text"],
+    .formulario_de_cadastro input[type="tel"],
+    .formulario_de_cadastro input[type="email"],
+    .formulario_de_cadastro textarea {
+        width: 150%; 
+        max-width: 300px; 
+    } 
+
+
+    .secao-sobre-nos{
+        margin: 0;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+
+    .paragrafo3 {
+        position: relative;
+        padding-bottom: 80px;
+        padding-left: 15px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+
+    .projects {
+        padding: 3px;
+    }
+
+
+    .project_models ul li {
+        padding: 6px 2px;
+    }
+
+
+    .projects_armazenamento ul {
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+
+    .projects a {
+        padding: 9px 17px;
+        font-size: 12px;
+    }
+
+
+    .projects_armazenamento ul{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    } 
+
+
+    .projects_armazenamento ul li img {
+        cursor: pointer;
+        max-width: 290px;
+        max-height: 200px;
+        min-width: 200px;
+        min-height: 200px;
+        border-radius: 4px;
+    }
+    
+
+
+    .footer_comercial {
+        font-size: 1rem;
+    }
+
+
+}
+
+/* Celulares Grandes (até 425px) */
+
+@media (max-width: 425px) {
+    header {
+        flex-direction: column;
+    }
+
+
+    header h1 {
+        font-size: 4rem;
+        padding: 20px;
+    }
+
+
+    header nav ul.navegacao-primaria {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    header nav i.fa-bars {
+        display: block;
+    }
+
+
+    .section-div{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+
+    .formulario_de_cadastro .campo {
+        width: 100%;
+    }
+
+
+    .services{
+        margin-top: 80px;
+    }
+
+
+    .my_services ul li {
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+
+    .sobre_titulo h1 {
+        font-size: 2rem;
+    }
+
+
+    .my_services ul li, .projects_armazenamento ul li {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+
+    .secao-sobre-nos{
+        margin: 0;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+
+    .redes_sociais {
+        display: none;
+    }
+
+
+    .paragrafo3 {
+        position: relative;
+        padding-bottom: 80px;
+        padding-left: 15px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+
+    .projects_armazenamento ul{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    } 
+
+
+    .projects_armazenamento ul li img {
+        cursor: pointer;
+        max-width: 290px;
+        max-height: 200px;
+        min-width: 200px;
+        min-height: 200px;
+        border-radius: 4px;
+    }
+    
+
+
+    .footer_comercial {
+        font-size: 1rem;
+    }
+
+
+}
+
+
+/* Celulares Médios (até 375px) */
+
+
+@media (max-width: 375px) {
+    header {
+        flex-direction: column;
+    }
+
+
+    header h1 {
+        font-size: 3.5rem;
+        padding: 20px;
+    }
+
+
+    header nav ul.navegacao-primaria {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    header nav i.fa-bars {
+        display: block;
+    }
+
+
+    .section-div{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+
+    }
+
+
+    .secao-sobre-nos{
+        margin: 0;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+
+    .services{
+        margin-top: 80px;
+    }
+
+
+    .formulario_de_cadastro .campo {
+        width: 100%;
+    }
+
+
+    .sobre_titulo h1 {
+        font-size: 1.75rem;
+    }
+
+
+    .my_services ul li, .projects_armazenamento ul li {
+        flex: 1 1 100%;
+    }
+
+
+    .redes_sociais {
+        display: none;
+    }
+
+
+    .paragrafo3 {
+        position: relative;
+        padding-bottom: 80px;
+        padding-left: 30px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    .projects_armazenamento ul{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    } 
+
+
+    .projects_armazenamento ul li img {
+        cursor: pointer;
+        max-width: 290px;
+        max-height: 200px;
+        min-width: 200px;
+        min-height: 200px;
+        border-radius: 4px;
+    }
+    
+
+
+    .footer_sociais li i{
+        font-size: 1.5rem;
+        
+    }
+
+
+    .footer_comercial {
+        font-size: 1rem;
+    }
+
+    
+}
+
+
+/* Celulares Pequenos (até 320px) */
+
+
+@media (max-width: 320px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+
+    header h1 {
+        font-size: 3rem;
+        padding: 20px;
+    }
+
+
+    header nav ul.navegacao-primaria {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+
+    header nav i.fa-bars {
+        display: block;
+        font-size: 2rem;
+    }
+
+
+    header .navegacao-primaria li a {
+        color: #969696;
+        font-size: 1rem;
+        position: relative;
+    }
+    
+
+    header .navegacao-primaria li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background-color: #1c8fcc;
+        transition: width 0.9s;
+    }
+    
+
+    header .navegacao-primaria li a:hover::after {
+        width: 100%;
+    }
+    
+
+    .section-div h1 {
+        position: relative;
+        padding-top: 30px;
+        padding-left: 50px;
+        font-size: 26px;
+        font-weight: 700;
+        padding-bottom: 30px;
+    }
+
+
+    .section-div .paragrafo1 {
+        position: relative;
+        padding-left: 20px;
+        font-size: 20px;
+        font-weight: 400;
+        padding-bottom: 90px;
+    }
+
+
+    .redes_sociais {
+        display: none;
+    }
+
+
+    .secao-sobre-nos{
+        margin: 0;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+
+    .formulario_de_cadastro .campo {
+        width: 100%;
+    }
+
+
+    .formulario_de_cadastro input[type="text"],
+    .formulario_de_cadastro input[type="tel"],
+    .formulario_de_cadastro input[type="email"],
+    .formulario_de_cadastro textarea {
+        width: 100%; 
+        max-width: 300px; 
+    } 
+
+
+    .sobre-nos{
+        padding: 0;
+    }
+
+
+    .sub-titulo{ 
+        font-size: 25px !important;    
+    }
+
+
+    .convite p{
+        position: relative;
+        text-align: center;
+        font-size: 16px;
+        bottom: 50px;
+    }     
+
+
+    .section-div {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+
+    .sobre_titulo h1 {
+        font-size: 1.5rem;  
+    }
+
+
+    .my_services ul li {
+        max-width: 300px;
+        max-height: 300px;
+        min-height: 300px;
+        min-width: 280px;
+    }
+
+
+    .my_services ul li, .projects_armazenamento ul li {
+        flex: 1 1 100%;
+    }
+
+    
+    .projects ul{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+    } 
+
+
+    .projects_armazenamento ul li img {
+        position: relative;
+        padding-right: 20px;
+        cursor: pointer;
+        max-width: 290px;
+        max-height: 200px;
+        min-width: 200px;
+        min-height: 200px;
+        border-radius: 4px;
+    }
+    
+
+    .footer_sociais li i{
+        font-size: 1.5rem;    
+    }
+
+
+    .footer_comercial {
+        font-size: 1rem;
+    }
+
+    
+}
