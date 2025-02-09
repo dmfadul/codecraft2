@@ -1,4 +1,4 @@
 .venv
-codecraft/codecraft/__pycache__
-codecraft/mainSite/__pycache__
-codecraft/mainSite/migrations/__pycache__
+codecraft/__pycache__
+mainSite/__pycache__
+mainSite/migrations/__pycache__
