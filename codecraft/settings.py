@@ -28,7 +28,9 @@ SECRET_KEY = getenv("SECRET_KEY", 'django-insecure-0cf9c&nqjbqt#%7jw)l*@i@eov_*u
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    getenv("APP_HOST", '127.0.0.1')
+    "codecraft.com",
+    "www.codecraft.com",
+    "localhost",
 ]
 
 
