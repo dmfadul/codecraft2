@@ -25,7 +25,7 @@ SECRET_KEY = getenv("SECRET_KEY")
 # SECRET_KEY = 'django-insecure-0cf9c&nqjbqt#%7jw)l*@i@eov_*u=6@s!tgn+r#n7#t4^@dd3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = getenv("IS_DEVELOPMENT") == "True"
 
 ALLOWED_HOSTS = [
     "codecraftbrazil.com",
