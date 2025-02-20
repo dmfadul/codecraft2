@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'mainSite',
+    'finance',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
