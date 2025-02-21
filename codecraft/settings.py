@@ -26,7 +26,7 @@ SECRET_KEY = getenv("SECRET_KEY")
 # SECRET_KEY = 'django-insecure-0cf9c&nqjbqt#%7jw)l*@i@eov_*u=6@s!tgn+r#n7#t4^@dd3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("IS_DEVELOPMENT") == "True"
+DEBUG = getenv("IS_DEVELOPMENT") is None or not getenv("IS_DEVELOPMENT") == "False"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "codecraftbrazil.com",
@@ -129,10 +129,10 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 
-if getenv("IS_DEVELOPMENT") == "True":
-    STATICFILES_DIRS = [BASE_DIR / 'static']
-else:
+if getenv("IS_DEVELOPMENT") == "False":
     STATICFILES_DIRS = []
+else:
+    STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
