@@ -7,11 +7,7 @@ from .models import Category, Card, Expense, Payment, CardTransaction
 
 
 def index(request):
-    from os import getenv
-    from codecraft.settings import STATICFILES_DIRS
-    print(getenv("IS_DEVELOPMENT") == "True")
-    print(STATICFILES_DIRS)
-    return HttpResponse("Hello from finances mod")
+    return render(request=request, template_name='finance/base_finance.html')
 
 
 class CategoryCreateView(CreateView):

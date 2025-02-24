@@ -1,18 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>Expense Manager</title>
-  {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> {% endcomment %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <nav>
     <ul>
-      {% comment %} <li><a href="{% url 'add-category' %}">Add Category</a></li>
+      <li><a href="{% url 'add-category' %}">Add Category</a></li>
       <li><a href="{% url 'add-card' %}">Add Card</a></li>
       <li><a href="{% url 'add-expense' %}">Add Expense</a></li>
       <li><a href="{% url 'add-payment' %}">Add Payment</a></li>
-      <li><a href="{% url 'add-card-transaction' %}">Add Card Transaction</a></li> {% endcomment %}
+      <li><a href="{% url 'add-card-transaction' %}">Add Card Transaction</a></li>
     </ul>
   </nav>
   <div class="container">
