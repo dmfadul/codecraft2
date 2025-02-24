@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from .models import Category, Card, Expense, Payment, CardTransaction
 
@@ -10,7 +11,7 @@ def index(request):
     return render(request=request, template_name='finance/base_finance.html')
 
 
-class CategoryCreateView(CreateView):
+class CategoryCreateView(LoginRequiredMixin, CreateView):
     model = Category
     fields = ['title', 'description']
     template_name = 'finance/category_form.html'
