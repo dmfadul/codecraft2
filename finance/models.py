@@ -32,7 +32,7 @@ class Card(models.Model):
 class Expense(models.Model):
     title = models.CharField(max_length=255, unique=True)
     description = models.TextField(blank=True, null=True)
-    due_date = models.DateField()
+    due_date = models.IntegerField()
     exp_amount = models.DecimalField(max_digits=10, decimal_places=2)
     is_fixed = models.BooleanField(default=False)
 
