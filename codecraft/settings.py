@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-from os import getenv
-import os
+try:
+    from .settings_secrets import *
+except ImportError:
+    raise Exception("Missing settings_secret.py file!")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,12 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = getenv("SECRET_KEY")
-SECRET_KEY = 'django-insecure-0cf9c&nqjbqt#%7jw)l*@i@eov_*u=6@s!tgn+r#n7#t4^@dd3'
+# SECRET_KEY in settings_secrets.py
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = getenv("IS_DEVELOPMENT") is None or not getenv("IS_DEVELOPMENT") == "False"
-DEBUG = True
+# DEBUG in settings_secrets.py
+
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "codecraftbrazil.com",
@@ -129,9 +131,6 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
-
-
-STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
 # Default primary key field type
