@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 try:
-    from .settings_secrets import *
+    from .settings_secret import *
 except ImportError:
     raise Exception("Missing settings_secret.py file!")
 
