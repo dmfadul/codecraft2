@@ -4,8 +4,6 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    from os import getenv
-    print("envs: ", getenv('ALLOWED_HOSTS'), getenv('SECRET_KEY'))
     return render(request, 'mainSite/index.html')
 
 def about(request):
