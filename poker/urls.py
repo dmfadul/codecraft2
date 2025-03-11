@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('range/', views.range, name='poker_range'),
+    path('range/', views.poker_ranges, name='poker_range'),
+    path("save_range/", views.save_range, name="save_range"),
 ]

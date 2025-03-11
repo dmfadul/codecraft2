@@ -1,32 +1,38 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poker Range Memorization</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Memorize Poker Ranges</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h2>Poker Range Memorization</h2>
-        
-        <label for="position">Select Position:</label>
-        <select id="position">
-            <option value="UTG">UTG</option>
-            <option value="MP">MP</option>
-            <option value="CO">CO</option>
-            <option value="BTN">BTN</option>
-            <option value="SB">SB</option>
-            <option value="BB">BB</option>
-        </select>
 
-        <div id="card-grid" class="grid"></div>
-        
-        <button id="saveButton">Save Ranges</button>
+    <h2>Memorize Poker Ranges</h2>
+    
+    <label for="position-select">Select Position:</label>
+    <select id="position-select">
+        <option value="" disabled selected>Select a position</option>
+        {% for position in positions %}
+            <option value="{{ position.id }}">{{ position.name }}</option>
+        {% endfor %}
+    </select>
+
+    <div id="grid-container">
+        <table>
+            <tbody>
+                {% for row in hand_combinations %}
+                <tr>
+                    {% for hand in row %}
+                    <td class="hand-cell" data-hand="{{ hand }}"></td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
