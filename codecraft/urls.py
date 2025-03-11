@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("mainSite.urls")),
     path('finance/', include('finance.urls')),
+    path('poker/', include('poker.urls')),
 
     # Authentication URLs
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
