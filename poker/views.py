@@ -15,11 +15,9 @@ class PositionCreateView(CreateView):
 def poker_ranges(request):
     positions = Position.objects.all()
     hand_combinations = generate_hand_combinations()
-    print(hand_combinations)
     return render(request, "poker/poker_ranges.html", {"positions": positions, "hand_combinations": hand_combinations})
 
 def save_range(request):
-    print("save range")
     if request.method == "POST":
         data = json.loads(request.body)
         position = Position.objects.get(id=data["position_id"])

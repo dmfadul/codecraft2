@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const positionId = positionSelect.value;
         if (!positionId) return alert("Please select a position first.");
 
-        fetch("/save_range/", {
+        fetch("/poker/save_range/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
