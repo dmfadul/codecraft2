@@ -35,5 +35,5 @@ def save_range(request):
     
 def generate_hand_combinations():
     ranks = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]
-    hands = [[f"{r1}{r2}s" if i < j else f"{r2}{r1}o" if i > j else f"{r1}{r2}" for i, r1 in enumerate(ranks)] for j, r2 in enumerate(ranks)]
+    hands = [[f"{r1}{r2}o" if i < j else f"{r2}{r1}s" if i > j else f"{r1}{r2}" for i, r1 in enumerate(ranks)] for j, r2 in enumerate(ranks)]
     return hands
