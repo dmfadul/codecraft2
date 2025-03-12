@@ -1,7 +1,16 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.http import JsonResponse
-import json
+from django.views.generic.edit import CreateView
 from .models import Position, RangeEntry
+import json
+
+
+class PositionCreateView(CreateView):
+    model = Position
+    fields = ['title']
+    template_name = 'poker/position_form.html'
+    success_url = reverse_lazy('add-position')
 
 def poker_ranges(request):
     positions = Position.objects.all()
