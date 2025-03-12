@@ -26,14 +26,13 @@ class Position(models.Model):
 
 class RangeEntry(models.Model):
     stack_depth = models.ForeignKey(StackDepth, on_delete=models.CASCADE, null=True)
-    stack = models.IntegerField(default=100)  # Stack size in BBs
     context = models.ForeignKey(Context, on_delete=models.CASCADE, null=True)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
     hand = models.CharField(max_length=5)  # e.g., "AKs", "QJo"
     action = models.CharField(max_length=5, choices=[('raise', 'Raise'), ('limp', 'Limp')])
 
     class Meta:
-        unique_together = ('position', 'hand', 'stack')  # Avoid duplicate entries
+        unique_together = ('position', 'hand', 'stack_depth')  # Avoid duplicate entries
 
     def __str__(self):
         return f"{self.position.name}/{self.stack} - {self.hand} - {self.action}"
