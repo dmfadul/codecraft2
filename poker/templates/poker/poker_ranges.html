@@ -25,7 +25,7 @@
                 {% for row in hand_combinations %}
                 <tr>
                     {% for hand in row %}
-                    <td class="hand-cell" data-hand="{{ hand }}"></td>
+                    <td class="hand-cell" data-hand="{{ hand }}">{{ hand }}</td>
                     {% endfor %}
                 </tr>
                 {% endfor %}
