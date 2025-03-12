@@ -19,6 +19,9 @@ class StackDepth(models.Model):
 
 class Position(models.Model):
     name = models.CharField(max_length=20, unique=True)
+    abbreviation = models.CharField(max_length=5, unique=True)
+    description = models.TextField()
+    distance_from_button = models.IntegerField()
 
     def __str__(self):
         return self.name

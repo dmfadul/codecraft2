@@ -8,7 +8,7 @@ import json
 
 class PositionCreateView(CreateView):
     model = Position
-    fields = ['name']
+    fields = ['name', 'abbreviation', 'description', 'distance_from_button']
     template_name = 'poker/position_form.html'
     success_url = reverse_lazy('add_position')
 
