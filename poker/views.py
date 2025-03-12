@@ -6,7 +6,7 @@ from .models import Position, RangeEntry
 def poker_ranges(request):
     positions = Position.objects.all()
     hand_combinations = generate_hand_combinations()
-    return render(request, "poker_ranges.html", {"positions": positions, "hand_combinations": hand_combinations})
+    return render(request, "poker/poker_ranges.html", {"positions": positions, "hand_combinations": hand_combinations})
 
 def save_range(request):
     if request.method == "POST":
