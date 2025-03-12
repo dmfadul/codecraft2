@@ -8,9 +8,9 @@ import json
 
 class PositionCreateView(CreateView):
     model = Position
-    fields = ['title']
+    fields = ['name']
     template_name = 'poker/position_form.html'
-    success_url = reverse_lazy('add-position')
+    success_url = reverse_lazy('add_position')
 
 def poker_ranges(request):
     positions = Position.objects.all()
