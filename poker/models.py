@@ -7,6 +7,14 @@ class Context(models.Model):
 
     def __str__(self):
         return self.abbreviation
+
+
+class StackDepth(models.Model):
+    minimum = models.IntegerField()
+    maximum = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.minimum} - {self.maximum}"
     
 
 class Position(models.Model):
