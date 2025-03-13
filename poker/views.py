@@ -45,16 +45,13 @@ def get_range(request, position):
     selected_stack = StackDepth.objects.filter(minimum=50, maximum=100).first()
     position_obj = Position.objects.filter(abbreviation=position).first()
 
-    hand_combinations_ = RangeEntry.objects.filter(position=position_obj,
-                                                  context=selected_context,
-                                                  stack_depth=selected_stack).all()
+    hand_combinations = RangeEntry.load_range(position=position_obj,
+                                              context=selected_context,
+                                              stack_depth=selected_stack)
     
-    if not hand_combinations_:
-        hand_combinations_ = RangeEntry.gen_range(position_obj, selected_stack, selected_context)
+    if not hand_combinations:
+        hand_combinations = RangeEntry.gen_range(position_obj, selected_stack, selected_context)
 
-    print(hand_combinations_)
-    
-    hand_combinations = generate_hand_combinations()
     return render(request, "poker/poker_ranges.html",
                   {"positions": positions,
                    "selected_position": position,
@@ -64,14 +61,15 @@ def get_range(request, position):
 def save_range(request):
     if request.method == "POST":
         data = json.loads(request.body)
-        position = Position.objects.get(id=data["position_id"])
-        hand = data["hand"]
+        hand = RangeEntry.objects.filter(id=data["hand"]).first()
         action = data["action"]
 
         if action:
-            RangeEntry.objects.update_or_create(position=position, hand=hand, defaults={"action": action})
-        else:
-            RangeEntry.objects.filter(position=position, hand=hand).delete()
+            RangeEntry.objects.update_or_create(stack_depth=hand.stack_depth,
+                                                context=hand.context,
+                                                position=hand.position,
+                                                hand=hand.hand,
+                                                defaults={"action":action})
 
         return JsonResponse({"status": "success"})
     

@@ -47,6 +47,32 @@ class RangeEntry(models.Model):
         return f"{self.position.name}/{self.stack_depth} - {self.hand} - {self.action}"
 
     @classmethod
+    def load_range(cls, position, stack_depth, context):
+        ranks = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]       
+        hands = [
+            [f"{r1}{r2}o" if i < j else f"{r2}{r1}s" if i > j else f"{r1}{r2}" for i, r1 in enumerate(ranks)]
+            for j, r2 in enumerate(ranks)
+            ]
+
+        range = []
+        for row in hands:
+            range_row = []
+            for hand in row:
+                entry = cls.objects.filter(position=position,
+                                           stack_depth=stack_depth,
+                                           context=context,
+                                           hand=hand).first()
+                
+                if entry:
+                    range_row.append(entry)
+            
+            if range_row:
+                range.append(range_row)
+
+        return range
+
+
+    @classmethod
     def gen_range(cls, position, stack_depth, context):
         ranks = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]       
         hands = [
