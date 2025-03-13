@@ -41,4 +41,24 @@ class RangeEntry(models.Model):
         unique_together = ('position', 'hand', 'stack_depth')  # Avoid duplicate entries
 
     def __str__(self):
-        return f"{self.position.name}/{self.stack} - {self.hand} - {self.action}"
+        return f"{self.position.name}/{self.stack_depth} - {self.hand} - {self.action}"
+
+    @classmethod
+    def gen_range(cls, position, stack_depth, context):
+        ranks = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]
+
+        
+        hands = [
+            "{r1}{r2}o" if i < j else f"{r2}{r1}s" if i > j else f"{r1}{r2}"
+            for i, r1 in enumerate(ranks) for j, r2 in enumerate(ranks)
+        ]
+
+        new_entries = [
+            cls(position=position, stack_depth=stack_depth, context=context, hand=hand, action='fold')
+            for hand in hands
+        ]
+
+        if new_entries:
+            cls.objects.bulk_create(new_entries)
+
+        return 0
