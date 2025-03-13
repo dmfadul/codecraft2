@@ -12,10 +12,21 @@ class PositionCreateView(CreateView):
     template_name = 'poker/position_form.html'
     success_url = reverse_lazy('add_position')
 
+
 def poker_ranges(request):
     positions = Position.objects.all()
     hand_combinations = generate_hand_combinations()
     return render(request, "poker/poker_ranges.html", {"positions": positions, "hand_combinations": hand_combinations})
+
+
+def get_range(request, position):
+    positions = Position.objects.all()
+    hand_combinations = generate_hand_combinations()
+    return render(request, "poker/poker_ranges.html", {"positions": positions,
+                                                       "selected_position": position,
+                                                       "hand_combinations": hand_combinations})
+
+
 
 def save_range(request):
     if request.method == "POST":

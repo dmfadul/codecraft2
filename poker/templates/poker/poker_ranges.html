@@ -11,13 +11,16 @@
 
     <h2>Memorize Poker Ranges</h2>
     
-    <label for="position-select">Select Position:</label>
-    <select id="position-select">
-        <option value="" disabled selected>Select a position</option>
-        {% for position in positions %}
-            <option value="{{ position.id }}">{{ position.name }}</option>
-        {% endfor %}
-    </select>
+    <div>
+        <label for="position-select">Select Position:</label>
+        <select id="position-select">
+            {% for position in positions %}
+                <option value="{{ position.abbreviation }}" {% if position.abbreviation == selected_position %}selected{% endif %}>
+                    {{ position.abbreviation }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
 
     <div id="grid-container">
         <table>
@@ -32,6 +35,15 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+    document.getElementById('position-select').addEventListener('change', function() {
+        var position = this.value;
+        if (position) {
+            window.location.href = `/poker/get_range/${encodeURIComponent(position)}/`;
+        }
+    });
+    </script>
 
     <script src="{% static 'js/scripts.js' %}"></script>
 </body>
