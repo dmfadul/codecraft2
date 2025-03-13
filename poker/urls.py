@@ -7,4 +7,6 @@ urlpatterns = [
     path('get_range/<str:position>/', views.get_range, name='get_range'),
     path('save_range/', views.save_range, name='save_range'),
     path('positions/', views.PositionCreateView.as_view(), name='add_position'),
+    path('stacks/', views.StackDepthCreateView.as_view(), name='add_stack'),
+    path('context/', views.ContextCreateView.as_view(), name='add_context'),
 ]

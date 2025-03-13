@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from django.views.generic.edit import CreateView
-from .models import Position, RangeEntry
+from .models import Position, Context, StackDepth, RangeEntry
 import json
 
 
@@ -11,6 +11,20 @@ class PositionCreateView(CreateView):
     fields = ['name', 'abbreviation', 'description', 'distance_from_button']
     template_name = 'poker/position_form.html'
     success_url = reverse_lazy('add_position')
+
+
+class ContextCreateView(CreateView):
+    model = Context
+    fields = ['title', 'abbreviation', 'description']
+    template_name = 'poker/context_form.html'
+    success_url = reverse_lazy('add_context')
+
+
+class StackDepthCreateView(CreateView):
+    model = StackDepth
+    fields = ['minimum', 'maximum']
+    template_name = 'poker/stack_form.html'
+    success_url = reverse_lazy('add_stackeX$')
 
 
 def poker_ranges(request):
@@ -25,7 +39,6 @@ def get_range(request, position):
     return render(request, "poker/poker_ranges.html", {"positions": positions,
                                                        "selected_position": position,
                                                        "hand_combinations": hand_combinations})
-
 
 
 def save_range(request):
