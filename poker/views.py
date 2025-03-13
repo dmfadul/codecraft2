@@ -29,16 +29,23 @@ class StackDepthCreateView(CreateView):
 
 def poker_ranges(request):
     positions = Position.objects.all()
+    situations = Context.objects.all()
+    stacks = StackDepth.objects.all()
     hand_combinations = generate_hand_combinations()
-    return render(request, "poker/poker_ranges.html", {"positions": positions, "hand_combinations": hand_combinations})
+    return render(request, "poker/poker_ranges.html",
+                  {"positions": positions,
+                   "situations": situations,
+                   "stacks": stacks,
+                   "hand_combinations": hand_combinations})
 
 
-def get_range(request, position):
+def get_range(request, selected_position):
     positions = Position.objects.all()
     hand_combinations = generate_hand_combinations()
-    return render(request, "poker/poker_ranges.html", {"positions": positions,
-                                                       "selected_position": position,
-                                                       "hand_combinations": hand_combinations})
+    return render(request, "poker/poker_ranges.html",
+                  {"positions": positions,
+                   "selected_position": selected_position,
+                   "hand_combinations": hand_combinations})
 
 
 def save_range(request):

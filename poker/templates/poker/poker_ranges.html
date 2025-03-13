@@ -12,6 +12,28 @@
     <h2>Memorize Poker Ranges</h2>
     
     <div>
+        <label for="situation-select">Select Situation:</label>
+        <select id="situation-select">
+            {% for situation in situations %}
+                <option value="{{ situation.abbreviation }}" {% if situation.abbreviation == selected_situation %}selected{% endif %}>
+                    {{ situation.abbreviation }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="stack-select">Select Stack:</label>
+        <select id="stack-select">
+            {% for stack in stacks %}
+                <option value="{{ stack.id }}" {% if stack.id == selected_stack_id %}selected{% endif %}>
+                    {{ stack }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
         <label for="position-select">Select Position:</label>
         <select id="position-select">
             {% for position in positions %}
