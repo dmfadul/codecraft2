@@ -50,7 +50,7 @@
                 {% for row in hand_combinations %}
                 <tr>
                     {% for hand in row %}
-                    <td class="hand-cell" "{{ hand.action }}" data-hand="{{ hand.id }}">{{ hand.hand }}</td>
+                    <td class="hand-cell {{ hand.action }}" data-hand="{{ hand.id }}">{{ hand.hand }}</td>
                     {% endfor %}
                 </tr>
                 {% endfor %}
