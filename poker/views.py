@@ -52,7 +52,10 @@ def get_range(request, position, context, stack_id):
                                               stack_depth=stack)
     
     if not hand_combinations:
-        hand_combinations = RangeEntry.gen_range(position, stack, context)
+        RangeEntry.gen_range(position, stack, context)
+        hand_combinations = RangeEntry.load_range(position=position,
+                                                  context=context,
+                                                  stack_depth=stack)
 
     return render(request, "poker/poker_ranges.html",
                   {"positions": positions,
@@ -78,8 +81,3 @@ def save_range(request):
                                                 defaults={"action":action})
 
         return JsonResponse({"status": "success"})
-    
-def generate_hand_combinations():
-    ranks = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]
-    hands = [[f"{r1}{r2}o" if i < j else f"{r2}{r1}s" if i > j else f"{r1}{r2}" for i, r1 in enumerate(ranks)] for j, r2 in enumerate(ranks)]
-    return hands
