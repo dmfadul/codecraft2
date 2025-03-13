@@ -13,6 +13,9 @@ class StackDepth(models.Model):
     minimum = models.IntegerField()
     maximum = models.IntegerField()
 
+    class meta:
+        unique_together = ('minimum', 'maximum')
+
     def __str__(self):
         return f"{self.minimum} - {self.maximum}"
     
@@ -45,11 +48,9 @@ class RangeEntry(models.Model):
 
     @classmethod
     def gen_range(cls, position, stack_depth, context):
-        ranks = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]
-
-        
+        ranks = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]       
         hands = [
-            "{r1}{r2}o" if i < j else f"{r2}{r1}s" if i > j else f"{r1}{r2}"
+            f"{r1}{r2}o" if i < j else f"{r2}{r1}s" if i > j else f"{r1}{r2}"
             for i, r1 in enumerate(ranks) for j, r2 in enumerate(ranks)
         ]
 
