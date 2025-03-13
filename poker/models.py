@@ -32,7 +32,10 @@ class RangeEntry(models.Model):
     context = models.ForeignKey(Context, on_delete=models.CASCADE, null=True)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
     hand = models.CharField(max_length=5)  # e.g., "AKs", "QJo"
-    action = models.CharField(max_length=5, choices=[('raise', 'Raise'), ('limp', 'Limp')])
+    action = models.CharField(max_length=5, 
+                              choices=[('raise', 'Raise'),
+                                       ('limp', 'Limp'),
+                                       ('n_a', 'n/a')])
 
     class Meta:
         unique_together = ('position', 'hand', 'stack_depth')  # Avoid duplicate entries
