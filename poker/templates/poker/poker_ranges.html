@@ -59,13 +59,23 @@
     </div>
 
     <script>
-    document.getElementById('position-select').addEventListener('change', function() {
-        var position = this.value;
-        if (position) {
-            window.location.href = `/poker/get_range/${encodeURIComponent(position)}/`;
-        }
-    });
-    </script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function updateURL() {
+                var position = document.getElementById('position-select').value;
+                var context = document.getElementById('situation-select').value;
+                var stackId = document.getElementById('stack-select').value;
+        
+                if (position && context && stackId) {
+                    window.location.href = `/poker/get_range/${encodeURIComponent(position)}/${encodeURIComponent(context)}/${encodeURIComponent(stackId)}/`;
+                }
+            }
+        
+            document.getElementById('position-select').addEventListener('change', updateURL);
+            document.getElementById('situation-select').addEventListener('change', updateURL);
+            document.getElementById('stack-select').addEventListener('change', updateURL);
+        });
+        </script>
+        
 
     <script src="{% static 'js/scripts.js' %}"></script>
 </body>

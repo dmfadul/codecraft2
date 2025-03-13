@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from django.views.generic.edit import CreateView
@@ -28,33 +28,39 @@ class StackDepthCreateView(CreateView):
 
 
 def poker_ranges(request):
+    # Check if query parameters exist
+    position = request.GET.get("position", "UTG")
+    context = request.GET.get("context", "RFI")
+    stack_id = request.GET.get("stack_id", "1")  # Default to "1" but ensure it's an integer
+
+    # Redirect to the get_range view with default values if they are not set
+    return redirect("get_range", position=position, context=context, stack_id=int(stack_id))
+
+
+def get_range(request, position, context, stack_id):
     positions = Position.objects.all()
-    situations = Context.objects.all()
+    contexts = Context.objects.all()
     stacks = StackDepth.objects.all()
-    hand_combinations = generate_hand_combinations()
-    return render(request, "poker/poker_ranges.html",
-                  {"positions": positions,
-                   "situations": situations,
-                   "stacks": stacks,
-                   "hand_combinations": hand_combinations})
 
 
-def get_range(request, position):
-    positions = Position.objects.all()
-    selected_context = Context.objects.filter(abbreviation="RFI").first()
-    selected_stack = StackDepth.objects.filter(minimum=50, maximum=100).first()
-    position_obj = Position.objects.filter(abbreviation=position).first()
+    position = Position.objects.filter(abbreviation=position).first()
+    context = Context.objects.filter(abbreviation=context).first()
+    stack = StackDepth.objects.filter(id=stack_id).first()
 
-    hand_combinations = RangeEntry.load_range(position=position_obj,
-                                              context=selected_context,
-                                              stack_depth=selected_stack)
+    hand_combinations = RangeEntry.load_range(position=position,
+                                              context=context,
+                                              stack_depth=stack)
     
     if not hand_combinations:
-        hand_combinations = RangeEntry.gen_range(position_obj, selected_stack, selected_context)
+        hand_combinations = RangeEntry.gen_range(position, stack, context)
 
     return render(request, "poker/poker_ranges.html",
                   {"positions": positions,
-                   "selected_position": position,
+                   "situations": contexts,
+                   "stacks": stacks,
+                   "selected_position": position.abbreviation,
+                   "selected_situation": context.abbreviation,
+                   "selected_stack_id": stack.id,
                    "hand_combinations": hand_combinations})
 
 
